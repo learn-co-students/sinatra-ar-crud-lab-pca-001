@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<h1>EDIT THIS ARTICLE</h1>
+
+<form action="/articles/<%= @article.id %>" method="POST">
+  <label>Article Title:</label>
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input id="title" type="text" name="article[title]" value=<%= @article.title %>><br>
+  <lable>Article Content:</label>
+  <textarea id="content" name="article[content]"><%= @article.content %>
+  </textarea><br>
+  <input type="submit" id="submit">
+</form>
+</body>
+
+</html>
